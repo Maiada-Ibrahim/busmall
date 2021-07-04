@@ -1,8 +1,8 @@
 'use strict';
 let divEL = document.getElementById('divimg')
-//let index1EL = document.getElementById('index1')
-let index2EL = document.getElementById('index2')
-let index3EL = document.getElementById('index3')
+// let index1EL = document.getElementById('index1')
+// let index2EL = document.getElementById('index2')
+// let index3EL = document.getElementById('index3')
 
 let imgarry=[]
 let objectarray = [];
@@ -14,7 +14,7 @@ function Product(imgp) {
     objectarray.push(this)
 }
 let namepicarray = ['bag.jpg', 'banana.jpg', 'bathroom.jpg', 'boots.jpg', 'breakfast.jpg', 'bubblegum.jpg', 'chair.jpg', 'cthulhu.jpg', 'dog-duck.jpg', 'dragon.jpg', 'pen.jpg', 'pet-sweep.jpg', 'scissors.jpg', 'shark.jpg', 'sweep.png', 'tauntaun.jpg', 'unicorn.jpg', 'water-can.jpg', 'wine-glass.jpg']
-console.log(  this.img = 'img/'+namepicarray)
+
 
 
 function createobject() {
@@ -23,8 +23,8 @@ function createobject() {
 }
 createobject();
 
-console.log(namepicarray);
-console.log(objectarray.length);
+// console.log(namepicarray);
+// console.log(objectarray.length);
 
 
 
@@ -32,9 +32,9 @@ function creatrandom() {
     return Math.floor(Math.random() * objectarray.length);
 }
 creatrandom();
-console.log(creatrandom());
+//console.log(creatrandom());
 
-console.log(objectarray.length);
+//console.log(objectarray.length);
 
 
 let indexarray = [];
@@ -55,31 +55,29 @@ function indexfun() {
         }
 
     }
-    // indexarray.push(index1)
-    // indexarray.push(index2)
-    // indexarray.push(index3)
+    indexarray.push(index1)
+    indexarray.push(index2)
+    indexarray.push(index3)
  
 }
 indexfun();
 
-let index1EL = document.getElementById('index1')
-index1EL.setAttribute('src', objectarray[index1].img);
- index2EL.setAttribute('src', objectarray[index2].img);
- index3EL.setAttribute('src', objectarray[index3].img);
+// let index1EL = document.getElementById('index1')
+// index1EL.setAttribute('src', objectarray[index1].img);
+//  index2EL.setAttribute('src', objectarray[index2].img);
+//  index3EL.setAttribute('src', objectarray[index3].img);
+// console.log(indexarray.length)
+function render() {
+    
+  for (let i = 0; i <= indexarray.length; i++) {
+      
+         let indexEL = document.getElementById(`index` + (i+1))
+         indexEL.setAttribute('src', objectarray[indexarray[i]].img);
+    
+    }
+}
 
-// function render() {
-//   for (let i = 0; i < indexarray.length; i++) {
- //         let index1EL = document.getElementById(`index` + i)
-//         let index1EL = document.getElementById(`index` + i)
-//         index1EL.setAttribute('src', objectarray[indexarray[i]].image);
-//         divEL.appendChild(index1EL)
-
-
-
-//     }
-// }
-
-//render();
+render();
 
 // index1EL.addEventListener('click', handelClicks);
 // index2EL.addEventListener('click', handelClicks);
