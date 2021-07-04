@@ -1,0 +1,10 @@
+main div img {
+display: inline-block;
+position: relative;
+top: 200px;
+left: 400px;
+border: red 2px solid;
+width: 200px; 
+height: 200px;
+margin: 20px;
+}
