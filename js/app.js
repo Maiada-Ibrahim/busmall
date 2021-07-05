@@ -4,6 +4,7 @@
 // let index2EL = document.getElementById('index2')
 // let index3EL = document.getElementById('index3')
 let ulEl = document.getElementById('results');
+let divEL = document.getElementById('divimg');
 
 let imgarry=[]
 let attempts=1;
@@ -40,20 +41,48 @@ creatrandom();
 //console.log(objectarray.length);
 
 
+// let indexarray = [];
+// let index0;
+// let index1;
+// let index2;
+// function indexfun(){
+//     indexarray = [];
+//     index0 = creatrandom();
+//     index1 = creatrandom();
+//     index2 = creatrandom();
+//     while ((index0 === index1) || (index0 === index2) || (index1 === index2)) {
+//         if (index0 === index1) {
+//             index1 = creatrandom()
+//         } else if (index0 === index2) {
+//             index2 = creatrandom()
+//         } else {
+//             index2 = creatrandom()
+//         }
+
+//     }
+//     indexarray.push(index0)
+//     indexarray.push(index1)
+//     indexarray.push(index2)
+ 
+// }
+// indexfun();
+
+let indexarrayfirsttime=[]
 let indexarray = [];
 let index0;
 let index1;
 let index2;
 function indexfun(){
+     indexarrayfirsttime= indexarray
     indexarray = [];
     index0 = creatrandom();
     index1 = creatrandom();
     index2 = creatrandom();
-    while ((index0 === index1) || (index0 === index2) || (index1 === index2)) {
-        if (index0 === index1) {
+    while (    ( (index0 === index1)   ||   (indexarrayfirsttime.indexOf(index0) != -1  ) ||    (index0 === index2)      )   ||   ( (index1 === index2)   ||   (indexarrayfirsttime.indexOf(index1) != -1  ) ) ||      (indexarrayfirsttime.indexOf(index2) != -1  )        ) {
+        if (  ( (index0 === index1)   ||   (indexarrayfirsttime.indexOf(index0) != -1  ) ||    (index0 === index2)      )) {
+            index0 = creatrandom()
+        } else if (( (index1 === index2)   ||   (indexarrayfirsttime.indexOf(index1) != -1  ) )) {
             index1 = creatrandom()
-        } else if (index0 === index2) {
-            index2 = creatrandom()
         } else {
             index2 = creatrandom()
         }
@@ -62,9 +91,12 @@ function indexfun(){
     indexarray.push(index0)
     indexarray.push(index1)
     indexarray.push(index2)
- 
+    
+    // console.log('first',indexarrayfirsttime)
+    // console.log(indexarray)
 }
 indexfun();
+
 
 // index1EL.setAttribute('src', objectarray[index1].img);
 //  index2EL.setAttribute('src', objectarray[index2].img);
@@ -72,7 +104,7 @@ indexfun();
 // console.log(indexarray.length)
 let indexELarray=[]
  function render() {
-    let divEL = document.getElementById('divimg')
+   
     let indexEL;
   for (let i = 0; i < indexarray.length; i++) {
      
@@ -87,9 +119,11 @@ let indexELarray=[]
     }
 } 
 render();
-indexELarray[0].addEventListener('click', handelClicks);
-indexELarray[1].addEventListener('click', handelClicks);
-indexELarray[2].addEventListener('click', handelClicks);
+divEL.addEventListener('click', handelClicks);
+
+// indexELarray[0].addEventListener('click', handelClicks);
+// indexELarray[1].addEventListener('click', handelClicks);
+// indexELarray[2].addEventListener('click', handelClicks);
 // index1EL.addEventListener('click', handelClicks);
 // index2EL.addEventListener('click', handelClicks);
 // index3EL.addEventListener('click', handelClicks);
@@ -122,15 +156,15 @@ function handelClicks(event)
 }else{
     let btnEL=document.getElementById('btnid')
     btnEL.addEventListener('click', result);
-    indexELarray[0].removeEventListener('click', handelClicks);
-    indexELarray[1].removeEventListener('click', handelClicks);
-    indexELarray[2].removeEventListener('click', handelClicks);}
+    // indexELarray[0].removeEventListener('click', handelClicks);
+    // indexELarray[1].removeEventListener('click', handelClicks);
+    // indexELarray[2].removeEventListener('click', handelClicks);}
+ divEL.removeEventListener('click', handelClicks);
 
-
- attempts++;
+ 
 }
-
-
+attempts++;
+}
    
 
 
