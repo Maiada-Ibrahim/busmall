@@ -1,8 +1,8 @@
 # busmall
 # salmoncook
-# LAB - 06
+# LAB - 12 and lab 13
 ## About me
-#### I build an app to practice what I learn about object ,and how access and edite elments at web page from JS
+#### I build an app to practice what I learn about busmall
 
 ## Author:
 #### *maiada ibrahim*
@@ -14,7 +14,7 @@
 
 
 ## submission PR : 
-#### Jun 27 at 11:00 pm
+#### July 5 at 3:00 pm
 
 
 ## Reflections and Comments:
