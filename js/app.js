@@ -196,7 +196,7 @@ function chartRender() {
                 label: '# of views',
                 data: views,
                 backgroundColor: [
-                    'rgba(155, 199, 120, 0.2)',
+                    'rgba(0, 0, 255, 0.8)',
                 ],
                 borderColor: [
                     'rgba(155, 199, 120, 0.2)',
