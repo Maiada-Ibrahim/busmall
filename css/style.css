@@ -8,3 +8,22 @@ width: 200px;
 height: 200px;
 margin: 20px;
 }
+#btnid{
+ display: inline-block;
+position: relative;
+top: 550px;
+left: 500px;
+}
+#results {
+    display: inline-block;
+    position: relative;
+    top: 280px;
+    left: 650px;
+
+    
+}
+h1{
+    color: slategray;
+    font-size: 100px;
+    text-align: center;
+}
