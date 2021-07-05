@@ -27,3 +27,9 @@ h1{
     font-size: 100px;
     text-align: center;
 }
+canvas{
+    display: inline-block;
+    position: relative;
+    top: 280px;
+    
+}

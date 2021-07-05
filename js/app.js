@@ -10,12 +10,16 @@ let imgarry=[]
 let attempts=1;
 let maxclick=25;
 let objectarray = [];
+let nameproarray=[];
+let votes = [];
+let views = [];
 function Product(imgp) {
     this.namepro = imgp.split('.')[0]
     this.img = 'img/'+imgp
     this.views = 0
     this.votes = 0
     objectarray.push(this)
+    nameproarray.push(this.namepro)
 }
 let namepicarray = ['bag.jpg', 'banana.jpg', 'bathroom.jpg', 'boots.jpg', 'breakfast.jpg', 'bubblegum.jpg', 'chair.jpg', 'cthulhu.jpg', 'dog-duck.jpg', 'dragon.jpg', 'pen.jpg', 'pet-sweep.jpg', 'scissors.jpg', 'shark.jpg', 'sweep.png', 'tauntaun.jpg', 'unicorn.jpg', 'water-can.jpg', 'wine-glass.jpg']
 
@@ -132,8 +136,11 @@ function result(event) {
         let liEl = document.createElement('li');
         liEl.textContent = `${objectarray[i].namepro} had ${objectarray[i].votes} votes and was seen ${objectarray[i].views} times .`
         ulEl.appendChild(liEl);
+        views.push(objectarray[i].views);
+        votes.push(objectarray[i].votes);
     }
 
+    chartRender();
 }
 
 
@@ -168,7 +175,44 @@ attempts++;
    
 
 
-
+function chartRender() {
+    let ctx = document.getElementById('myChart').getContext('2d');
+    let myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: nameproarray,
+            datasets: [{
+                label: '# of Votes',
+                data: votes,
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                ],
+                borderWidth: 2
+            },
+            {
+                label: '# of views',
+                data: views,
+                backgroundColor: [
+                    'rgba(155, 199, 120, 0.2)',
+                ],
+                borderColor: [
+                    'rgba(155, 199, 120, 0.2)',
+                ],
+                borderWidth: 2
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+}
 
 
 
