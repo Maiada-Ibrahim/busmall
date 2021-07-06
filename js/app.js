@@ -13,6 +13,7 @@ let objectarray = [];
 let nameproarray=[];
 let votes = [];
 let views = [];
+
 function Product(imgp) {
     this.namepro = imgp.split('.')[0]
     this.img = 'img/'+imgp
@@ -141,6 +142,7 @@ function result(event) {
     }
 
     chartRender();
+    saveToLocalStorage()
 }
 
 
@@ -172,8 +174,24 @@ function handelClicks(event)
 }
 attempts++;
 }
-   
+ 
 
+
+
+function saveToLocalStorage() {
+    let data =JSON.stringify(objectarray);
+    localStorage.setItem('busmall', data);
+}
+function readlocalstorge() {
+let stringObj= localStorage.getItem('busmall ');
+  
+    let normalObj = JSON.parse(stringObj);
+    if (normalObj !== null) {
+        objectarray = normalObj;
+    }
+     console.log(objectarray);
+}
+readlocalstorge();
 
 function chartRender() {
     let ctx = document.getElementById('myChart').getContext('2d');
