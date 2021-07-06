@@ -179,19 +179,21 @@ attempts++;
 
 
 function saveToLocalStorage() {
-    let data =JSON.stringify(objectarray);
+    let data = JSON.stringify(objectarray);
     localStorage.setItem('busmall', data);
 }
-function readlocalstorge() {
-let stringObj= localStorage.getItem('busmall ');
-  
+function readFromLocalStorage() {
+    let stringObj = localStorage.getItem('busmall');
+    // console.log(stringObj);
     let normalObj = JSON.parse(stringObj);
+    // console.log(normalObj);
     if (normalObj !== null) {
         objectarray = normalObj;
+        
     }
-     console.log(objectarray);
+    // console.log(Coffee.drinks);
 }
-readlocalstorge();
+readFromLocalStorage();
 
 function chartRender() {
     let ctx = document.getElementById('myChart').getContext('2d');
