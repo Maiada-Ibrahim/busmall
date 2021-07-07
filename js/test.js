@@ -5,9 +5,6 @@
 // let index3EL = document.getElementById('index3')
 let ulEl = document.getElementById('results');
 let divEL = document.getElementById('divimg');
-let btnEL=document.getElementById('btnid')
-let namepicarray = ['bag.jpg', 'banana.jpg', 'bathroom.jpg', 'boots.jpg', 'breakfast.jpg', 'bubblegum.jpg', 'chair.jpg', 'cthulhu.jpg', 'dog-duck.jpg', 'dragon.jpg', 'pen.jpg', 'pet-sweep.jpg', 'scissors.jpg', 'shark.jpg', 'sweep.png', 'tauntaun.jpg', 'unicorn.jpg', 'water-can.jpg', 'wine-glass.jpg']
-
 
 let imgarry=[]
 let attempts=1;
@@ -16,8 +13,6 @@ let objectarray = [];
 let nameproarray=[];
 let votes = [];
 let views = [];
-let previoussum=[];
-
 
 function Product(imgp) {
     this.namepro = imgp.split('.')[0]
@@ -27,6 +22,7 @@ function Product(imgp) {
     objectarray.push(this)
     nameproarray.push(this.namepro)
 }
+let namepicarray = ['bag.jpg', 'banana.jpg', 'bathroom.jpg', 'boots.jpg', 'breakfast.jpg', 'bubblegum.jpg', 'chair.jpg', 'cthulhu.jpg', 'dog-duck.jpg', 'dragon.jpg', 'pen.jpg', 'pet-sweep.jpg', 'scissors.jpg', 'shark.jpg', 'sweep.png', 'tauntaun.jpg', 'unicorn.jpg', 'water-can.jpg', 'wine-glass.jpg']
 
 
 
@@ -35,9 +31,9 @@ function createobject() {
         new Product(namepicarray[i])
 }
 createobject();
+
 // console.log(namepicarray);
 // console.log(objectarray.length);
-
 
 
 
@@ -106,6 +102,7 @@ function indexfun(){
 }
 indexfun();
 
+
 // index1EL.setAttribute('src', objectarray[index1].img);
 //  index2EL.setAttribute('src', objectarray[index2].img);
 //  index3EL.setAttribute('src', objectarray[index3].img);
@@ -144,41 +141,11 @@ function result(event) {
         votes.push(objectarray[i].votes);
     }
 
-    //chartRender();
+    chartRender();
     saveToLocalStorage()
-    
-
-     btnEL.removeEventListener('click', result);
-   
-
-
 }
 
-function saveToLocalStorage() {
-    let data = JSON.stringify(objectarray);
-    localStorage.setItem('busmall', data);
-}
 
-function readFromLocalStorage() {
-    let stringObj = localStorage.getItem('busmall');
-    // console.log(stringObj);
-    let normalObj = JSON.parse(stringObj);
-    // console.log(normalObj);
-
-    if (normalObj !== null) {
-      // previoussum=normalObj
-      
-       objectarray=normalObj  
-      result()
-     
-       
-
-    }else{
-       
-    }
-    // console.log(Coffee.drinks);
-}
-readFromLocalStorage(); 
 
 
 
@@ -196,11 +163,13 @@ function handelClicks(event)
  render();
  
 }else{
+    let btnEL=document.getElementById('btnid')
     btnEL.addEventListener('click', result);
     // indexELarray[0].removeEventListener('click', handelClicks);
     // indexELarray[1].removeEventListener('click', handelClicks);
     // indexELarray[2].removeEventListener('click', handelClicks);}
  divEL.removeEventListener('click', handelClicks);
+
  
 }
 attempts++;
@@ -209,7 +178,22 @@ attempts++;
 
 
 
-
+function saveToLocalStorage() {
+    let data = JSON.stringify(objectarray);
+    localStorage.setItem('busmall', data);
+}
+function readFromLocalStorage() {
+    let stringObj = localStorage.getItem('busmall');
+    // console.log(stringObj);
+    let normalObj = JSON.parse(stringObj);
+    // console.log(normalObj);
+    if (normalObj !== null) {
+        objectarray = normalObj;
+        
+    }
+    // console.log(Coffee.drinks);
+}
+readFromLocalStorage();
 
 function chartRender() {
     let ctx = document.getElementById('myChart').getContext('2d');

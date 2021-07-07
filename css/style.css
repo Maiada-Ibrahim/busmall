@@ -36,3 +36,6 @@ display: inline-block;
     left: 550px;
     
 }
+ul{
+    border: red 2px solid;
+}
