@@ -144,7 +144,7 @@ function result(event) {
         votes.push(objectarray[i].votes);
     }
 
-    //chartRender();
+    chartRender();
     saveToLocalStorage()
     
 
@@ -169,7 +169,7 @@ function readFromLocalStorage() {
       // previoussum=normalObj
       
        objectarray=normalObj  
-      result()
+      
      
        
 
@@ -249,15 +249,3 @@ function chartRender() {
         }
     });
 }
-
-
-
-
-
-
-
-
-
-
-
-
