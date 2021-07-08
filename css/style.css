@@ -36,6 +36,8 @@ h2{
     color: rgb(65, 65, 92);
     font-size: 70px;
     text-align: center;
+    rotate: 360px;;
+    transition: 20s;
 }
 header p{ 
     color:rgb(65, 65, 92);
