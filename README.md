@@ -1,8 +1,8 @@
 # busmall
 # salmoncook
-# LAB - 12 and lab 13
+# LAB - 12 and lab 13 and lab15
 ## About me
-#### I build an app to practice what I learn about busmall
+#### I build an app to  learn more about button and chart with new repo name busmall
 
 ## Author:
 #### *maiada ibrahim*
@@ -15,6 +15,7 @@
 
 ## submission PR : 
 #### July 5 at 3:00 pm
+#### July 6 at 7:00 pm
 
 
 ## Reflections and Comments:
